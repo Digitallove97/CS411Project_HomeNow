@@ -1,0 +1,531 @@
+<!DOCTYPE html >
+
+
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topnav {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #eee;
+  z-index:1;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #bbb;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+ 
+
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #aaa;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+ 
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+ 
+
+p.top{
+    color:black;
+    text-align:center;
+    font-size:40px;
+    margin:30px;
+    padding:10px;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+img {
+    
+}
+
+
+.icon{
+    opacity:0.5;
+    float:left;
+    width:15%;
+    height:15%
+    margin-left:30%;
+}
+.dropdown {
+    margin:3%;
+    float:left;
+    width:45%;
+    height:500px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.top-container {
+    background-color:#fff;
+    width:100%;
+    margin:0;
+    padding-top:5%;
+    padding-bottom:5%;
+}
+.bi {
+  font-family:"Trebuchet MS", Helvetica, sans-serif;
+  line-height:300%;
+  font-size:20px;
+    
+}
+input[type=submit]{
+    background-color: #2196F3; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left:46.5%;
+    margin-top:1%;
+    margin-bottom:5%;
+    display:inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+input[type=submit]:hover {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #2196F3;
+}
+.level1{
+  margin:0;
+  background-color:#fff;
+  width:100%;
+  padding-top:0px;
+  padding-bottom:0px;
+  padding-left:0px;
+  padding-right:0px;
+  font-family:"Trebuchet MS", Helvetica, sans-serif;
+  font-size:25px;
+  text-align:center;
+  float:left;
+}
+.level2{
+  margin:0;
+  background-color:#fff;
+  width:100%;
+  padding-top:0px;
+  padding-bottom:0px;
+  padding-left:0px;
+  padding-right:0px;
+  font-family:"Trebuchet MS", Helvetica, sans-serif;
+  font-size:22px;
+  text-align:center;
+  float:left;
+  display: inline;
+}
+.level4{
+  margin:0%;
+  background-color:#fff;
+  width:100%;
+  padding-top:0px;
+  padding-bottom:0px;
+  padding-left:0px;
+  padding-right:0px;
+  font-family:"Trebuchet MS", Helvetica, sans-serif;
+  font-size:60px;
+  text-align:center;
+  color:#2196F3;
+}
+.level3-left{
+  margin:0;
+  background-color:#fff;
+  width:40%;
+  padding-top:0px;
+  padding-bottom:0px;
+  padding-left:10%;
+  padding-right:0px;
+  line-height:150%;
+  font-family:"Trebuchet MS", Helvetica, sans-serif;
+  font-size:17px;
+  text-align:left;
+  float:left;
+  display: inline-block;
+}
+.level3-right{
+  margin:0;
+  background-color:#fff;
+  width:40%;
+  padding-top:0px;
+  padding-bottom:0px;
+  padding-left:10%;
+  padding-right:0px;
+  line-height:150%;
+  font-family:"Trebuchet MS", Helvetica, sans-serif;
+  font-size:17px;
+  text-align:left;
+  float:right;
+  display: inline-block;
+}
+
+.level1-section{
+  text-align:left;
+  font-family:"Trebuchet MS", Helvetica, sans-serif;
+  padding-top:20px;
+  padding-bottom:20px;
+  background-color:#fff;
+  width:100%;
+  font-size:30px;
+}
+.level2-section{
+  text-align:left;
+  font-family:"Trebuchet MS", Helvetica, sans-serif;
+  padding-top:20px;
+  padding-bottom:20px;
+  background-color:#fff;
+  width:100%;
+  font-size:30px;
+}
+.level1-comment{
+  margin:0;
+  background-color:#fff;
+  width:100%;
+  padding-top:0px;
+  font-family:"Trebuchet MS", Helvetica, sans-serif;
+  font-size:25px;
+  text-align:center;
+  float:left;
+}
+.level2-comment{
+  margin:0;
+  background-color:#fff;
+  width:100%;
+  padding-top:0px;
+  font-family:"Trebuchet MS", Helvetica, sans-serif;
+  font-size:25px;
+  text-align:center;
+  float:left;
+}
+p.red{
+    color:#be4f5d;
+    padding-top:15px;
+    margin:0px;
+}
+p.green{
+    color:#66c555;
+    padding-top:15px;
+    margin:0px;
+}
+hr {
+    display: block;
+    height: 10px;
+    border: 0;
+    border-top: 2px solid #2196f3;
+    margin-left:5%;
+    margin-right:5%;
+    padding: 2px;
+}
+.comment{
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    font-size:20px;
+    margin-right:20px;
+    text-align:right;
+    padding:0px;
+    margin-bottom:0px;
+}
+   </style>
+  </head>
+<body>
+    
+    
+    <div class='topnav'>
+  <a class='active' href='http://homenowproject.web.engr.illinois.edu'>HomeNow</a>
+  <a href='http://homenowproject.web.engr.illinois.edu/login.html'>Developer</a>
+  <div class='search-container'>
+    <form name='topnav' method='post' action='better_display.php'>
+      <input type='text' placeholder='Search the apartment..' name='name'>
+      <button type='submit'><i class='fa fa-search'></i></button>
+      <input type='hidden' name='section' value='search'>
+    </form>
+  </div>
+</div><br>
+<br>     <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9eW4KOZBW08YyFlHRQAZKlnG6WnHFQKI&callback=initMap">
+    </script>
+    
+<br>
+<div id="map"></div>
+<br>
+<div id="campground_info"></div>
+
+
+<select id="type">
+    <option value="">Any number of beds</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+    <option value="4">Four</option>
+</select>
+<select id="type2" >
+    <option value="">Any number of baths</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+    <option value="4">Four</option>
+</select>
+<select id="type3" >
+    <option value="">Any price</option>
+    <option value=500>Less Than $500</option>
+    <option value=800>Less Than $800</option>
+    <option value=1000>Less Than $1000</option>
+    <option value=5000>Less Than $5000</option>
+</select>
+
+
+<input type="submit" onclick="filterMarkers();">
+
+</html>
+
+<style>
+    #map {
+   margin: 0 auto 0 auto;
+  width: 1200px;
+  height: 500px;
+   }
+   
+   #campground_info{
+        text-align: center;
+        border: 2px solid #2196F3;
+   }
+   select {
+    display: block;
+    margin: 0 auto;
+    text-align:center;
+    }
+   
+}
+
+</style>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script>
+
+var map
+var markers = []
+/*
+// start out with filter features set to false, so no filtering happens by default
+var filters = {bed1:false, bath1:false}
+
+$(function () {
+    $('input[name=filter]').change(function (e) {
+     map_filter(this.id);
+      filter_markers()
+  });
+
+
+})
+
+var get_set_options = function() {
+  ret_array = []
+  for (option in filters) {
+    if (filters[option]) {
+      ret_array.push(option)
+    }
+  }
+  return ret_array;
+}
+
+var filter_markers = function() {  
+  set_filters = get_set_options()
+  
+  // for each marker, check to see if all required options are set
+  for (i = 0; i < markers.length; i++) {
+    marker = markers[i];
+
+    // start the filter check assuming the marker will be displayed
+    // if any of the required features are missing, set 'keep' to false
+    // to discard this marker
+    keep=true
+    for (opt=0; opt<set_filters.length; opt++) {
+      if (!marker.properties[set_filters[opt]]) {
+        keep = false;
+      }
+    }
+    marker.setVisible(keep)
+  }
+}
+
+var map_filter = function(id_val) {
+   if (filters[id_val]) 
+      filters[id_val] = false
+   else
+      filters[id_val] = true
+}
+*/
+
+
+
+
+
+// after the geojson is loaded, iterate through the map data to create markers
+// and add the pop up (info) windows
+function loadMarkers() {
+  console.log('creating markers')
+  var infoWindow = new google.maps.InfoWindow()
+  geojson_url = 'http://homenowproject.web.engr.illinois.edu/getjson.php'
+  $.getJSON(geojson_url, function(result) {
+      // Post select to url.
+      data = result['features']
+      $.each(data, function(key, val) {
+        var point = new google.maps.LatLng(
+                parseFloat(val['geometry']['coordinates'][1]),
+                parseFloat(val['geometry']['coordinates'][0]));
+        var titleText = val['properties']['name']
+        var descriptionText = val['properties']['address']
+        var bed = val['properties']['bed']
+        var bath = val['properties']['bath']
+        var price = val['properties']['price']
+        var contact = val['properties']['contact']
+        var picture = val['properties']['picture']
+        var marker = new google.maps.Marker({
+          position: point,
+          title: titleText,
+          map: map,
+          category: bed,
+          properties: bath,
+          money: price
+         });
+
+        var markerInfo = "<div><h3>Apartment name: " + titleText +"<h3>ContactNumber: "+ contact + "<h3>Address: " + descriptionText + "<h3>Beds: " + bed + "<h3>Bath: " + bath + "<h3>Price: "+ price + "<p><img src=" + picture + " style = 'width:500px; height:355px'></p>"+"</div>"
+
+        marker.addListener('click', function() {
+           $('#campground_info').html(markerInfo)
+        });
+        
+        markers.push(marker)
+        
+      });
+  });
+}
+
+function initMap() {
+    map_options = {
+      zoom: 10,
+      mapTypeId: google.maps.MapTypeId.HYBRID,
+      center: {lat: 40.14482, lng: -88.25126}
+    }
+    
+    map_document = document.getElementById('map')
+    map = new google.maps.Map(map_document,map_options);
+    loadMarkers()
+ 
+}
+
+
+filterMarkers = function () {
+    category = document.getElementById("type").value
+    properties = document.getElementById("type2").value
+    money = document.getElementById("type3").value
+    for (i = 0; i < markers.length; i++) {
+        marker = markers[i];
+        // If is same category or category not picked
+        if ((marker.category == category || category.length === 0)&&(marker.properties == properties || properties.length === 0)&&(parseInt(marker.money) <= money || money.length == 0)) {
+            marker.setVisible(true);
+        }
+        // Categories don't match 
+        else {
+            marker.setVisible(false);
+        }
+    }
+}
+
+/*
+filterMarkers2 = function (properties) {
+    for (i = 0; i < markers.length; i++) {
+        marker = markers[i];
+        // If is same category or category not picked
+        if (marker.properties == properties || properties.length === 0) {
+            marker.setVisible(true);
+        }
+        // Categories don't match 
+        else {
+            marker.setVisible(false);
+        }
+    }
+}*/
+
+google.maps.event.addDomListener(window, 'load', initMap);
+</script>
+</body>
+</html>
